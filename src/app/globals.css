@@ -5,11 +5,20 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-primary: #0d1224;
+  --color-secondary: #9966ff;
+  --color-tertiary: #060a17;
+
+  --breakpoint-3xs: 320px;
+  --breakpoint-2xs: 480px;
+  --breakpoint-xs: 576px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1600px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +28,53 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.container {
+  @apply mx-auto max-w-[92.5%] xs:max-w-[90%] sm:max-w-[85%];
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
+@layer utilities {
+  .font-300 {
+    font-family: var(--font-poppins);
+    font-weight: 300;
+  }
+  .font-400 {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+  }
+  .font-500 {
+    font-family: var(--font-poppins);
+    font-weight: 500;
+  }
+  .font-600 {
+    font-family: var(--font-poppins);
+    font-weight: 600;
+  }
+  .font-700 {
+    font-family: var(--font-poppins);
+    font-weight: 700;
+  }
 }
